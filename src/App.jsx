@@ -1,27 +1,47 @@
 import React from "react";
+
 function App() {
   return (
-    <div style={{ display: "flex", flexWrap:"wrap", gap: "1rem" }}>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+    // console.log("Hello React"),
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+      <Card
+        title="Flutter"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dolores?"
+        source="https://img.icons8.com/?size=350&id=PmGdjRbnOudE&format=png"
+      />
+      <Card
+        title="React"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, dolores?"
+        source="https://img.icons8.com/?size=300&id=Vra58PN2KmI5&format=png"
+      />
     </div>
   );
 }
 
+// const title= {props.title}
+// const description= {props.description}
 
-function Card() {
+function Card({ title, description, source }) {
+  //   const { title, description } = props;
+
   return (
-    <div style={{width: "200px", height: "300px", backgroundColor: "red", border: "1px solid black"}}>
-      <img src="https://picsum.photos/200/300" alt="card" />
-      <h1>Hello React</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis,
-        doloribus modi dolore magnam excepturi amet fugit totam placeat
-        laboriosam maiores
-      </p>
+    <div
+      style={{
+        width: "300px",
+        height: "200px",
+        backgroundColor: "red",
+        textAlign : "center",
+      }}
+    >
+      <h1>{title}</h1>
+      <img
+        src={source}
+        alt="React"
+        style={{ width: "100px", height: "100px" }}
+      />
+      <p>{description}</p>
     </div>
   );
 }
+
 export default App;
